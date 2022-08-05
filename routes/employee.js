@@ -7,7 +7,6 @@ router.get("/", function (req, res) {
 
 router.get("/salary", function (req, res) {
   let date = new Date();
-
   let month = [
     "January",
     "February",
@@ -22,10 +21,40 @@ router.get("/salary", function (req, res) {
     "November",
     "December",
   ];
+  let onlyMonthandYear = month[date.getMonth()] + " - " + date.getFullYear();
 
-  let onlyMonth = month[date.getMonth()];
+  let name = req.query.name;
+  let grade = req.query.grade;
+  let salary = parseFloat(req.query.salary);
+  let da = 0;
+  let hra = 0;
 
-  res.render("salary", { month: onlyMonth });
+  if (grade === "Grade I") {
+    da = 16;
+    hra = 12;
+  } else if (grade === "Grade II") {
+    da = 22;
+    hra = 16;
+  } else {
+    da = 28;
+    hra = 24;
+  }
+  let basesalary = salary;
+  let daamount = (da * basesalary) / 100;
+  let hraamount = (hra * basesalary) / 100;
+  let netSalary = basesalary + daamount + hraamount;
+
+  res.render("salary", {
+    monthAndYear: onlyMonthandYear,
+    name: name,
+    grade: grade,
+    basesalary: basesalary,
+    daamount: daamount,
+    hraamount: hraamount,
+    netSalary: netSalary,
+    da: da,
+    hra: hra,
+  });
 });
 
 module.exports = router;
