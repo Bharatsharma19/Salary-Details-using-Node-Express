@@ -35,9 +35,12 @@ router.get("/salary", function (req, res) {
   } else if (grade === "Grade II") {
     da = 22;
     hra = 16;
-  } else {
+  } else if (grade === "Grade III") {
     da = 28;
     hra = 24;
+  } else {
+    da = 0;
+    hra = 0;
   }
   let basesalary = salary;
   let daamount = (da * basesalary) / 100;
