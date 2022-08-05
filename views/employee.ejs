@@ -8,43 +8,45 @@
   </head>
   <body>
     <center>
-      <h1>Salary Calculation Form</h1>
-      <br />
-      <table border="1" cellspacing="0" cellpadding="12">
-        <caption>
-          <h1>Enter Details</h1>
-        </caption>
-        <tr>
-          <td>
-            <i>Employee Name : </i>
-          </td>
-          <td>
-            <input type="text" name="name" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <i>Grade : </i>
-          </td>
-          <td>
-            <select name="grade">
-              <option>Grade I</option>
-              <option>Grade II</option>
-              <option>Grade III</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <i>Base Salary : </i>
-          </td>
-          <td>
-            <input type="text" name="salary" />
-          </td>
-        </tr>
-      </table>
-      <br />
-      <input type="submit" style="cursor: pointer" />
+      <form action="/salary">
+        <h1>Salary Calculation Form</h1>
+        <br />
+        <table border="1" cellspacing="0" cellpadding="12">
+          <caption>
+            <h1>Enter Details</h1>
+          </caption>
+          <tr>
+            <td>
+              <i>Employee Name : </i>
+            </td>
+            <td>
+              <input type="text" name="name" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i>Grade : </i>
+            </td>
+            <td>
+              <select name="grade">
+                <option>Grade I</option>
+                <option>Grade II</option>
+                <option>Grade III</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i>Base Salary : </i>
+            </td>
+            <td>
+              <input type="text" name="salary" />
+            </td>
+          </tr>
+        </table>
+        <br />
+        <input type="submit" style="cursor: pointer" />
+      </form>
     </center>
   </body>
 </html>
